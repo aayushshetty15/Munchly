@@ -22,9 +22,12 @@ const AppRoutes = () => {
         <Route path="/user/login" element={<UserLogin />} />
         <Route path="/food-partner/login" element={<FoodPartnerLogin />} />
 
-        {/* Respective home routes */}
+        {/* Respective home & dashboard routes */}
         <Route path="/home" element={<HomePage />} />
         <Route path="/user/home" element={<HomePage />} />
+        <Route path="/user/dashboard" element={<HomePage initialTab="dashboard" />} />
+        <Route path="/dashboard" element={<HomePage initialTab="dashboard" />} />
+        <Route path="/user/saved" element={<HomePage initialTab="saved" />} />
         <Route path="/food-partner/home" element={<PartnerHome />} />
 
         {/* Catch-all fallback */}
