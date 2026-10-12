@@ -212,8 +212,6 @@ const Home = () => {
     ? savedReels
     : reels;
 
-  const currentReel = displayReels[activeIndex] || reels[0];
-
   return (
     <div className="min-h-screen bg-white text-black flex flex-col overflow-hidden select-none">
       {/* Top Navbar */}
@@ -350,45 +348,7 @@ const Home = () => {
             </button>
           </div>
         ) : (
-          <div className="relative w-full h-[calc(100vh-62px)] flex items-center justify-center">
-            {/* Desktop Left Info Companion */}
-            {currentReel && (
-              <div className="hidden xl:flex flex-col gap-4 absolute left-12 top-1/2 -translate-y-1/2 z-20 w-72 bg-white border border-gray-200 rounded-2xl p-5 shadow-lg">
-                <div>
-                  <span className="text-[11px] font-bold uppercase tracking-wider text-gray-500">Currently Tasting</span>
-                  <h3 className="text-base font-extrabold text-black mt-1 leading-snug">{currentReel.name}</h3>
-                  <div className="flex items-center gap-2 mt-2">
-                    {currentReel.price > 0 && (
-                      <span className="bg-black text-white text-xs font-bold px-2 py-0.5 rounded-md">
-                        ₹{currentReel.price}
-                      </span>
-                    )}
-                    <span className="text-xs text-gray-600 font-semibold">
-                      {currentReel.cuisine || 'Specialty'}
-                    </span>
-                  </div>
-                </div>
-
-                {currentReel.foodPartner && (
-                  <div className="pt-3 border-t border-gray-100">
-                    <p className="text-xs text-gray-500">By Kitchen:</p>
-                    <p className="text-xs font-bold text-black">{currentReel.foodPartner.name}</p>
-                    <button
-                      onClick={() => setSelectedPartner(currentReel.foodPartner)}
-                      className="mt-2 text-xs font-bold text-black hover:underline cursor-pointer flex items-center gap-1"
-                    >
-                      <span>🍽️ View Full Menu</span>
-                      <span>→</span>
-                    </button>
-                  </div>
-                )}
-
-                <div className="pt-2 text-[11px] text-gray-400">
-                  💡 Tip: Use keyboard ▲ / ▼ arrow keys or swipe to explore
-                </div>
-              </div>
-            )}
-
+          <div className="relative w-full h-[calc(100vh-62px)] flex items-center justify-center overflow-hidden">
             {/* Reels Phone Frame Container */}
             <div
               ref={containerRef}
@@ -413,29 +373,6 @@ const Home = () => {
                   />
                 </div>
               ))}
-            </div>
-
-            {/* Desktop Quick Nav Controls (Up & Down Buttons) */}
-            <div className="hidden lg:flex flex-col gap-3 absolute right-10 xl:right-16 top-1/2 -translate-y-1/2 z-20">
-              <button
-                onClick={() => scrollToIndex(activeIndex - 1)}
-                disabled={activeIndex === 0}
-                className="w-11 h-11 rounded-2xl bg-white hover:bg-gray-100 border border-gray-300 text-black flex items-center justify-center disabled:opacity-30 disabled:cursor-not-allowed shadow-md transition-all cursor-pointer font-bold"
-                title="Previous Reel (Up Arrow)"
-              >
-                ▲
-              </button>
-              <div className="text-center font-extrabold text-xs text-black py-1">
-                {activeIndex + 1} / {displayReels.length}
-              </div>
-              <button
-                onClick={() => scrollToIndex(activeIndex + 1)}
-                disabled={activeIndex === displayReels.length - 1}
-                className="w-11 h-11 rounded-2xl bg-white hover:bg-gray-100 border border-gray-300 text-black flex items-center justify-center disabled:opacity-30 disabled:cursor-not-allowed shadow-md transition-all cursor-pointer font-bold"
-                title="Next Reel (Down Arrow)"
-              >
-                ▼
-              </button>
             </div>
           </div>
         )}
