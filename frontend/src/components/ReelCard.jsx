@@ -185,7 +185,7 @@ const ReelCard = ({
 
       {/* Copy Toast */}
       {copyToast && (
-        <div className="absolute top-16 left-1/2 -translate-x-1/2 z-40 bg-orange-500 text-white font-semibold text-xs px-4 py-2 rounded-full shadow-lg shadow-orange-500/30">
+        <div className="absolute top-16 left-1/2 -translate-x-1/2 z-40 bg-black text-white font-semibold text-xs px-4 py-2 rounded-full shadow-lg border border-gray-700">
           ✓ Link copied to clipboard!
         </div>
       )}
@@ -203,49 +203,50 @@ const ReelCard = ({
       </button>
 
       {/* Right Action Column */}
-      <div className="absolute right-3 sm:right-5 bottom-24 z-20 flex flex-col items-center gap-5 text-white">
+      <div className="absolute right-3 sm:right-5 bottom-24 z-20 flex flex-col items-center gap-4 text-white">
         {/* Restaurant Avatar Shortcut */}
-        <div 
-          className="relative group cursor-pointer" 
+        <button 
+          className="reel-side-btn" 
           onClick={(e) => { e.stopPropagation(); onOpenRestaurant(partner); }}
           title="View Restaurant Profile"
         >
-          {partner.profileImage ? (
-            <img
-              src={partner.profileImage}
-              alt={partner.name}
-              className="w-11 h-11 rounded-full object-cover border-2 border-orange-500 shadow-lg group-hover:scale-105 transition-transform"
-            />
-          ) : (
-            <div className="w-11 h-11 rounded-full p-0.5 bg-gradient-to-tr from-amber-400 to-orange-500 shadow-lg group-hover:scale-105 transition-transform">
-              <div className="w-full h-full rounded-full bg-slate-900 flex items-center justify-center font-bold text-sm text-orange-400">
+          <div className="relative">
+            {partner.profileImage ? (
+              <img
+                src={partner.profileImage}
+                alt={partner.name}
+                className="w-11 h-11 rounded-full object-cover border-2 border-white shadow-lg"
+              />
+            ) : (
+              <div className="w-11 h-11 rounded-full bg-white text-black flex items-center justify-center font-bold text-sm border-2 border-white shadow-lg">
                 {partner.name ? partner.name[0].toUpperCase() : '🍽️'}
               </div>
-            </div>
-          )}
-          <span className="absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-orange-500 text-white text-[10px] font-black flex items-center justify-center shadow">
-            +
-          </span>
-        </div>
+            )}
+            <span className="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-black text-white text-[10px] font-black flex items-center justify-center border border-white">
+              +
+            </span>
+          </div>
+          <span className="reel-side-label">Profile</span>
+        </button>
 
         {/* Like Button */}
         <button
           onClick={handleLikeClick}
-          className="flex flex-col items-center gap-1 cursor-pointer group"
+          className="reel-side-btn"
           aria-label="Like"
         >
-          <div className={`w-11 h-11 rounded-full flex items-center justify-center backdrop-blur-md transition-all ${
-            liked ? 'bg-red-500/20 text-red-500 scale-110' : 'bg-black/40 text-white hover:bg-black/60'
+          <div className={`reel-side-icon-circle ${
+            liked ? 'bg-red-500/20 text-red-500 border-red-500 scale-110' : ''
           }`}>
             <svg
-              className={`w-6 h-6 transition-all ${liked ? 'fill-red-500 stroke-red-500' : 'stroke-white fill-none'}`}
+              className={`w-5 h-5 transition-all ${liked ? 'fill-red-500 stroke-red-500' : 'stroke-white fill-none'}`}
               viewBox="0 0 24 24"
               strokeWidth="2"
             >
               <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
             </svg>
           </div>
-          <span className="text-[11px] font-semibold drop-shadow">{likesCount}</span>
+          <span className="reel-side-label">{likesCount}</span>
         </button>
 
         {/* Comments Button */}
@@ -254,15 +255,15 @@ const ReelCard = ({
             e.stopPropagation();
             onOpenComments(reel);
           }}
-          className="flex flex-col items-center gap-1 cursor-pointer group"
+          className="reel-side-btn"
           aria-label="Reviews"
         >
-          <div className="w-11 h-11 rounded-full bg-black/40 hover:bg-black/60 backdrop-blur-md flex items-center justify-center text-white transition-all">
-            <svg className="w-6 h-6 stroke-white fill-none" viewBox="0 0 24 24" strokeWidth="2">
+          <div className="reel-side-icon-circle">
+            <svg className="w-5 h-5 stroke-white fill-none" viewBox="0 0 24 24" strokeWidth="2">
               <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
             </svg>
           </div>
-          <span className="text-[11px] font-semibold drop-shadow">Chat</span>
+          <span className="reel-side-label">Chat</span>
         </button>
 
         {/* Bookmark / Save Button */}
@@ -271,30 +272,30 @@ const ReelCard = ({
             e.stopPropagation();
             onSaveToggle(reel);
           }}
-          className="flex flex-col items-center gap-1 cursor-pointer group"
+          className="reel-side-btn"
           aria-label="Save"
         >
-          <div className={`w-11 h-11 rounded-full flex items-center justify-center backdrop-blur-md transition-all ${
-            isSaved ? 'bg-amber-500/30 text-amber-400 scale-110' : 'bg-black/40 text-white hover:bg-black/60'
+          <div className={`reel-side-icon-circle ${
+            isSaved ? 'bg-white text-black border-white scale-110' : ''
           }`}>
             <svg
-              className={`w-5 h-5 transition-all ${isSaved ? 'fill-amber-400 stroke-amber-400' : 'stroke-white fill-none'}`}
+              className={`w-5 h-5 transition-all ${isSaved ? 'fill-black stroke-black' : 'stroke-white fill-none'}`}
               viewBox="0 0 24 24"
               strokeWidth="2"
             >
               <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" />
             </svg>
           </div>
-          <span className="text-[11px] font-semibold drop-shadow">{isSaved ? 'Saved' : 'Save'}</span>
+          <span className="reel-side-label">{isSaved ? 'Saved' : 'Save'}</span>
         </button>
 
         {/* Share Button */}
         <button
           onClick={handleShare}
-          className="flex flex-col items-center gap-1 cursor-pointer group"
+          className="reel-side-btn"
           aria-label="Share"
         >
-          <div className="w-11 h-11 rounded-full bg-black/40 hover:bg-black/60 backdrop-blur-md flex items-center justify-center text-white transition-all">
+          <div className="reel-side-icon-circle">
             <svg className="w-5 h-5 stroke-white fill-none" viewBox="0 0 24 24" strokeWidth="2">
               <circle cx="18" cy="5" r="3" />
               <circle cx="6" cy="12" r="3" />
@@ -303,7 +304,7 @@ const ReelCard = ({
               <line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
             </svg>
           </div>
-          <span className="text-[11px] font-semibold drop-shadow">Share</span>
+          <span className="reel-side-label">Share</span>
         </button>
       </div>
 
