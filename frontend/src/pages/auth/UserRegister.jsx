@@ -75,13 +75,13 @@ const UserRegister = () => {
         <RoleToggle activeRole="user" type="register" />
 
         {error && (
-          <div className="mb-4 p-3 text-sm text-red-600 bg-red-50 dark:bg-red-950/40 dark:text-red-400 rounded-lg border border-red-200 dark:border-red-900/50">
+          <div className="mb-4 p-3 text-sm text-red-600 bg-red-50 rounded-lg border border-red-200">
             {error}
           </div>
         )}
 
         {success && (
-          <div className="mb-4 p-3 text-sm text-green-600 bg-green-50 dark:bg-green-950/40 dark:text-green-400 rounded-lg border border-green-200 dark:border-green-900/50">
+          <div className="mb-4 p-3 text-sm text-green-700 bg-green-50 rounded-lg border border-green-200">
             {success}
           </div>
         )}

@@ -4,6 +4,8 @@ import axios from 'axios';
 import RoleToggle from '../../components/RoleToggle';
 import '../../styles/auth.css';
 
+import { authStorage } from '../../services/api';
+
 const UserLogin = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
@@ -40,11 +42,18 @@ const UserLogin = () => {
         { withCredentials: true }
       );
 
+      if (response.data.token || response.data.user) {
+        authStorage.setAuth({
+          token: response.data.token,
+          role: 'user',
+          user: response.data.user,
+        });
+      }
+
       setSuccess(response.data.message || 'User Logged in Successfully');
-      // Can redirect to home or user feed:
       setTimeout(() => {
-        navigate('/');
-      }, 1000);
+        navigate('/home');
+      }, 600);
     } catch (err) {
       const msg = err.response?.data?.message || err.message || 'Invalid email or password';
       setError(msg);
@@ -74,13 +83,13 @@ const UserLogin = () => {
         <RoleToggle activeRole="user" type="login" />
 
         {error && (
-          <div className="mb-4 p-3 text-sm text-red-600 bg-red-50 dark:bg-red-950/40 dark:text-red-400 rounded-lg border border-red-200 dark:border-red-900/50">
+          <div className="mb-4 p-3 text-sm text-red-600 bg-red-50 rounded-lg border border-red-200">
             {error}
           </div>
         )}
 
         {success && (
-          <div className="mb-4 p-3 text-sm text-green-600 bg-green-50 dark:bg-green-950/40 dark:text-green-400 rounded-lg border border-green-200 dark:border-green-900/50">
+          <div className="mb-4 p-3 text-sm text-green-700 bg-green-50 rounded-lg border border-green-200">
             {success}
           </div>
         )}

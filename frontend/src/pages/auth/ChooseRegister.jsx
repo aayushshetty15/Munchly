@@ -25,20 +25,20 @@ const ChooseRegister = () => {
           {/* User Option Card */}
           <Link
             to="/user/register"
-            className="flex items-center gap-4 p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/40 hover:border-orange-500/60 dark:hover:border-orange-500/60 transition-all group cursor-pointer text-left no-underline text-inherit"
+            className="flex items-center gap-4 p-4 rounded-xl border border-gray-200 bg-white hover:border-black transition-all group cursor-pointer text-left no-underline text-inherit shadow-xs"
           >
-            <div className="w-12 h-12 rounded-xl bg-orange-100 dark:bg-orange-950/50 text-orange-600 dark:text-orange-400 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+            <div className="w-12 h-12 rounded-xl bg-gray-100 text-black flex items-center justify-center shrink-0 group-hover:bg-black group-hover:text-white transition-all">
               <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
                 <circle cx="12" cy="7" r="4" />
               </svg>
             </div>
             <div className="flex-1">
-              <div className="font-semibold text-slate-900 dark:text-white flex items-center justify-between">
+              <div className="font-bold text-black flex items-center justify-between">
                 <span>Food Enthusiast / User</span>
-                <span className="text-orange-500 group-hover:translate-x-1 transition-transform">→</span>
+                <span className="text-black group-hover:translate-x-1 transition-transform">→</span>
               </div>
-              <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+              <p className="text-xs text-gray-600 mt-0.5">
                 Watch curated food reels, discover hidden gems, and save your favorite dishes.
               </p>
             </div>
@@ -47,9 +47,9 @@ const ChooseRegister = () => {
           {/* Food Partner Option Card */}
           <Link
             to="/food-partner/register"
-            className="flex items-center gap-4 p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/40 hover:border-orange-500/60 dark:hover:border-orange-500/60 transition-all group cursor-pointer text-left no-underline text-inherit"
+            className="flex items-center gap-4 p-4 rounded-xl border border-gray-200 bg-white hover:border-black transition-all group cursor-pointer text-left no-underline text-inherit shadow-xs"
           >
-            <div className="w-12 h-12 rounded-xl bg-amber-100 dark:bg-amber-950/50 text-amber-600 dark:text-amber-400 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+            <div className="w-12 h-12 rounded-xl bg-gray-100 text-black flex items-center justify-center shrink-0 group-hover:bg-black group-hover:text-white transition-all">
               <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2" />
                 <path d="M7 2v20" />
@@ -57,11 +57,11 @@ const ChooseRegister = () => {
               </svg>
             </div>
             <div className="flex-1">
-              <div className="font-semibold text-slate-900 dark:text-white flex items-center justify-between">
+              <div className="font-bold text-black flex items-center justify-between">
                 <span>Food Partner / Kitchen</span>
-                <span className="text-orange-500 group-hover:translate-x-1 transition-transform">→</span>
+                <span className="text-black group-hover:translate-x-1 transition-transform">→</span>
               </div>
-              <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+              <p className="text-xs text-gray-600 mt-0.5">
                 Showcase your specials, gain visibility, and attract hungry foodies to your venue.
               </p>
             </div>

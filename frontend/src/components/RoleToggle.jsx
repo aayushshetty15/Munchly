@@ -21,13 +21,13 @@ const RoleToggle = ({ activeRole = 'user', type = 'register', onToggle }) => {
 
   return (
     <div
-      className="relative mb-6 w-full h-12 p-1 bg-slate-100 dark:bg-slate-800/90 rounded-full border border-slate-200 dark:border-slate-700/70 flex items-center select-none"
+      className="relative mb-6 w-full h-12 p-1 bg-gray-100 rounded-full border border-gray-300 flex items-center select-none"
       role="tablist"
       aria-label="Select account type"
     >
-      {/* Smooth sliding pill indicator */}
+      {/* Sliding pill indicator */}
       <div
-        className={`absolute top-1 bottom-1 left-1 w-[calc(50%-4px)] rounded-full bg-white dark:bg-slate-700 shadow-sm border border-slate-200/60 dark:border-slate-600/60 transition-transform duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] pointer-events-none ${
+        className={`absolute top-1 bottom-1 left-1 w-[calc(50%-4px)] rounded-full bg-white shadow-sm border border-gray-300 transition-transform duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] pointer-events-none ${
           isUser ? 'translate-x-0' : 'translate-x-full'
         }`}
       />
@@ -38,8 +38,8 @@ const RoleToggle = ({ activeRole = 'user', type = 'register', onToggle }) => {
         onClick={() => handleSelect('user')}
         className={`relative z-10 flex-1 h-full flex items-center justify-center gap-2 text-sm rounded-full transition-colors duration-200 cursor-pointer outline-none border-none bg-transparent ${
           isUser
-            ? 'text-orange-600 dark:text-orange-400 font-bold'
-            : 'text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-slate-100 font-medium'
+            ? 'text-black font-extrabold'
+            : 'text-gray-500 hover:text-black font-semibold'
         }`}
         role="tab"
         aria-selected={isUser}
@@ -65,8 +65,8 @@ const RoleToggle = ({ activeRole = 'user', type = 'register', onToggle }) => {
         onClick={() => handleSelect('partner')}
         className={`relative z-10 flex-1 h-full flex items-center justify-center gap-2 text-sm rounded-full transition-colors duration-200 cursor-pointer outline-none border-none bg-transparent ${
           !isUser
-            ? 'text-orange-600 dark:text-orange-400 font-bold'
-            : 'text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-slate-100 font-medium'
+            ? 'text-black font-extrabold'
+            : 'text-gray-500 hover:text-black font-semibold'
         }`}
         role="tab"
         aria-selected={!isUser}

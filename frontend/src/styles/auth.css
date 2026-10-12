@@ -2,7 +2,7 @@
 
 /* ==========================================================================
    FoodReel Shared Auth Stylesheet
-   Used across all 4 pages: User Login/Register & Food Partner Login/Register
+   Pure White Background & Black Text Minimalist Theme
    ========================================================================== */
 
 * {
@@ -15,10 +15,9 @@
 }
 
 body {
-  background-color: var(--color-bg-base);
-  color: var(--color-text-main);
+  background-color: #ffffff;
+  color: #000000;
   min-height: 100vh;
-  transition: background-color var(--transition-base), color var(--transition-base);
 }
 
 /* Page Wrapper */
@@ -28,50 +27,22 @@ body {
   align-items: center;
   justify-content: center;
   padding: 24px 16px;
-  background-color: var(--color-bg-base);
+  background-color: #ffffff;
   position: relative;
   overflow: hidden;
-}
-
-/* Subtle ambient background glow for seamless visual depth */
-.auth-page::before {
-  content: '';
-  position: absolute;
-  top: -120px;
-  right: -100px;
-  width: 400px;
-  height: 400px;
-  border-radius: 50%;
-  background: radial-gradient(circle, var(--color-brand-subtle) 0%, transparent 70%);
-  pointer-events: none;
-  opacity: 0.6;
-}
-
-.auth-page::after {
-  content: '';
-  position: absolute;
-  bottom: -150px;
-  left: -100px;
-  width: 420px;
-  height: 420px;
-  border-radius: 50%;
-  background: radial-gradient(circle, var(--color-brand-subtle) 0%, transparent 70%);
-  pointer-events: none;
-  opacity: 0.4;
 }
 
 /* Auth Card Container */
 .auth-card {
   width: 100%;
   max-width: 440px;
-  background-color: var(--color-bg-surface);
-  border: 1px solid var(--color-border);
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
   border-radius: var(--radius-lg);
   padding: 40px 36px;
-  box-shadow: var(--shadow-card);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.05);
   position: relative;
   z-index: 1;
-  transition: background-color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base);
 }
 
 /* Brand & Header Section */
@@ -94,9 +65,9 @@ body {
   align-items: center;
   gap: 10px;
   text-decoration: none;
-  color: var(--color-text-main);
+  color: #000000;
   font-size: var(--font-size-xl);
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: -0.02em;
   margin-bottom: 0;
 }
@@ -105,12 +76,12 @@ body {
   width: 36px;
   height: 36px;
   border-radius: var(--radius-md);
-  background: linear-gradient(135deg, var(--color-brand-primary), var(--color-brand-hover));
+  background: #000000;
   color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 10px rgba(249, 115, 22, 0.3);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
   flex-shrink: 0;
 }
 
@@ -127,13 +98,13 @@ body {
   gap: 6px;
   padding: 4px 10px;
   font-size: var(--font-size-xs);
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   border-radius: var(--radius-pill);
-  background-color: var(--color-partner-badge-bg);
-  color: var(--color-partner-badge-text);
-  border: 1px solid var(--color-partner-badge-border);
+  background-color: #f3f4f6;
+  color: #000000;
+  border: 1px solid #d1d5db;
   margin-bottom: 0;
   white-space: nowrap;
   flex-shrink: 0;
@@ -142,12 +113,13 @@ body {
 .portal-badge-dot {
   font-size: 8px;
   line-height: 1;
+  color: #000000;
 }
 
 .auth-title {
   font-size: var(--font-size-2xl);
-  font-weight: 700;
-  color: var(--color-text-main);
+  font-weight: 800;
+  color: #000000;
   letter-spacing: -0.02em;
   margin-bottom: 8px;
   line-height: 1.25;
@@ -155,15 +127,15 @@ body {
 
 .auth-subtitle {
   font-size: var(--font-size-sm);
-  color: var(--color-text-secondary);
+  color: #4b5563;
   line-height: 1.5;
 }
 
 /* Segmented Role Toggle */
 .role-toggle-container {
   display: flex;
-  background-color: var(--color-bg-subtle);
-  border: 1px solid var(--color-border);
+  background-color: #f3f4f6;
+  border: 1px solid #e5e7eb;
   border-radius: var(--radius-pill);
   padding: 4px;
   margin-bottom: 24px;
@@ -178,8 +150,8 @@ body {
   gap: 8px;
   padding: 9px 16px;
   font-size: var(--font-size-sm);
-  font-weight: 500;
-  color: var(--color-text-secondary);
+  font-weight: 600;
+  color: #4b5563;
   text-decoration: none;
   border-radius: var(--radius-pill);
   transition: all var(--transition-fast);
@@ -187,27 +159,21 @@ body {
 }
 
 .role-toggle-btn:hover {
-  color: var(--color-text-main);
+  color: #000000;
 }
 
 .role-toggle-btn.active {
-  background-color: var(--color-bg-surface);
-  color: var(--color-brand-primary);
-  font-weight: 600;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04);
+  background-color: #ffffff;
+  color: #000000;
+  font-weight: 800;
+  border: 1px solid #d1d5db;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
 }
 
 .role-toggle-icon {
   width: 16px;
   height: 16px;
   stroke: currentColor;
-}
-
-@media (prefers-color-scheme: dark) {
-  .role-toggle-btn.active {
-    background-color: #1a2234;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(255, 255, 255, 0.08);
-  }
 }
 
 /* Form Styles */
@@ -226,8 +192,8 @@ body {
 
 .form-label {
   font-size: var(--font-size-sm);
-  font-weight: 600;
-  color: var(--color-text-main);
+  font-weight: 700;
+  color: #000000;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -243,25 +209,25 @@ body {
   width: 100%;
   padding: 12px 14px;
   font-size: var(--font-size-sm);
-  color: var(--color-text-main);
-  background-color: var(--color-bg-input);
-  border: 1px solid var(--color-border);
+  color: #000000;
+  background-color: #ffffff;
+  border: 1.5px solid #d1d5db;
   border-radius: var(--radius-md);
   outline: none;
-  transition: border-color var(--transition-fast), box-shadow var(--transition-fast), background-color var(--transition-base);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
 }
 
 .form-input::placeholder {
-  color: var(--color-text-muted);
+  color: #9ca3af;
 }
 
 .form-input:hover {
-  border-color: var(--color-border-hover);
+  border-color: #9ca3af;
 }
 
 .form-input:focus {
-  border-color: var(--color-border-focus);
-  box-shadow: var(--shadow-input-focus);
+  border-color: #000000;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
 }
 
 /* Extra Form Actions (Remember me & Forgot password) */
@@ -270,7 +236,7 @@ body {
   justify-content: space-between;
   align-items: center;
   font-size: var(--font-size-xs);
-  color: var(--color-text-secondary);
+  color: #4b5563;
   margin-top: -2px;
 }
 
@@ -280,10 +246,12 @@ body {
   gap: 8px;
   cursor: pointer;
   user-select: none;
+  color: #000000;
+  font-weight: 500;
 }
 
 .checkbox-label input[type="checkbox"] {
-  accent-color: var(--color-brand-primary);
+  accent-color: #000000;
   width: 15px;
   height: 15px;
   cursor: pointer;
@@ -291,14 +259,12 @@ body {
 }
 
 .forgot-link {
-  color: var(--color-brand-primary);
+  color: #000000;
   text-decoration: none;
-  font-weight: 500;
-  transition: color var(--transition-fast);
+  font-weight: 600;
 }
 
 .forgot-link:hover {
-  color: var(--color-brand-hover);
   text-decoration: underline;
 }
 
@@ -308,14 +274,14 @@ body {
   width: 100%;
   padding: 13px;
   font-size: var(--font-size-base);
-  font-weight: 600;
-  color: var(--color-text-on-primary);
-  background-color: var(--color-brand-primary);
-  border: none;
+  font-weight: 700;
+  color: #ffffff;
+  background-color: #000000;
+  border: 1.5px solid #000000;
   border-radius: var(--radius-md);
   cursor: pointer;
-  box-shadow: var(--shadow-btn);
-  transition: background-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transition: all var(--transition-fast);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -323,8 +289,8 @@ body {
 }
 
 .btn-submit:hover {
-  background-color: var(--color-brand-hover);
-  box-shadow: var(--shadow-btn-hover);
+  background-color: #1f2937;
+  border-color: #1f2937;
   transform: translateY(-1px);
 }
 
@@ -343,28 +309,26 @@ body {
 
 .auth-footer-text {
   font-size: var(--font-size-sm);
-  color: var(--color-text-secondary);
+  color: #4b5563;
 }
 
 .auth-link {
-  color: var(--color-brand-primary);
-  font-weight: 600;
-  text-decoration: none;
-  transition: color var(--transition-fast);
+  color: #000000;
+  font-weight: 800;
+  text-decoration: underline;
 }
 
 .auth-link:hover {
-  color: var(--color-brand-hover);
-  text-decoration: underline;
+  color: #1f2937;
 }
 
 /* Portal Switch Box (Seamless switch between User & Partner) */
 .portal-switch-box {
-  border-top: 1px solid var(--color-border);
+  border-top: 1px solid #e5e7eb;
   padding-top: 18px;
   margin-top: 6px;
   font-size: var(--font-size-xs);
-  color: var(--color-text-muted);
+  color: #6b7280;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -372,17 +336,16 @@ body {
 }
 
 .portal-switch-link {
-  color: var(--color-text-secondary);
-  font-weight: 600;
+  color: #000000;
+  font-weight: 700;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  transition: color var(--transition-fast);
 }
 
 .portal-switch-link:hover {
-  color: var(--color-brand-primary);
+  text-decoration: underline;
 }
 
 /* Responsive adjustments */
