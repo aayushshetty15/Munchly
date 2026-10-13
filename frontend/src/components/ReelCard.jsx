@@ -131,7 +131,7 @@ const ReelCard = ({
     if (navigator.share) {
       navigator.share({
         title: reel.name,
-        text: `Check out ${reel.name} on FoodReel!`,
+        text: `Check out ${reel.name} on Munchly!`,
         url: url,
       }).catch(() => {});
     } else {
@@ -143,7 +143,7 @@ const ReelCard = ({
 
   const partner = reel.foodPartner || {
     name: 'Featured Restaurant',
-    address: 'FoodReel Hub',
+    address: 'Munchly Hub',
     phone: '',
   };
 

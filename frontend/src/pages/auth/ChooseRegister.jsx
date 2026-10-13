@@ -14,10 +14,10 @@ const ChooseRegister = () => {
                   <polygon points="5 3 19 12 5 21 5 3" fill="currentColor" />
                 </svg>
               </span>
-              <span>FoodReel</span>
+              <span>Munchly</span>
             </Link>
           </div>
-          <h1 className="auth-title">Join FoodReel</h1>
+          <h1 className="auth-title">Join Munchly</h1>
           <p className="auth-subtitle">Select how you would like to get started</p>
         </div>
 

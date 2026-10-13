@@ -8,7 +8,7 @@ const api = axios.create({
 });
 
 api.interceptors.request.use((config) => {
-  const token = localStorage.getItem('foodreel_token');
+  const token = localStorage.getItem('munchly_token') || localStorage.getItem('foodreel_token');
   if (token) {
     config.headers.Authorization = `Bearer ${token}`;
   }
@@ -16,10 +16,10 @@ api.interceptors.request.use((config) => {
 });
 
 export const authStorage = {
-  getToken: () => localStorage.getItem('foodreel_token'),
+  getToken: () => localStorage.getItem('munchly_token') || localStorage.getItem('foodreel_token'),
   getUser: () => {
     try {
-      const data = localStorage.getItem('foodreel_user');
+      const data = localStorage.getItem('munchly_user') || localStorage.getItem('foodreel_user');
       return data ? JSON.parse(data) : null;
     } catch {
       return null;
@@ -27,20 +27,36 @@ export const authStorage = {
   },
   getPartner: () => {
     try {
-      const data = localStorage.getItem('foodreel_partner');
+      const data = localStorage.getItem('munchly_partner') || localStorage.getItem('foodreel_partner');
       return data ? JSON.parse(data) : null;
     } catch {
       return null;
     }
   },
-  getRole: () => localStorage.getItem('foodreel_role'),
+  getRole: () => localStorage.getItem('munchly_role') || localStorage.getItem('foodreel_role'),
   setAuth: ({ token, role, user, foodPartner }) => {
-    if (token) localStorage.setItem('foodreel_token', token);
-    if (role) localStorage.setItem('foodreel_role', role);
-    if (user) localStorage.setItem('foodreel_user', JSON.stringify(user));
-    if (foodPartner) localStorage.setItem('foodreel_partner', JSON.stringify(foodPartner));
+    if (token) {
+      localStorage.setItem('munchly_token', token);
+      localStorage.setItem('foodreel_token', token);
+    }
+    if (role) {
+      localStorage.setItem('munchly_role', role);
+      localStorage.setItem('foodreel_role', role);
+    }
+    if (user) {
+      localStorage.setItem('munchly_user', JSON.stringify(user));
+      localStorage.setItem('foodreel_user', JSON.stringify(user));
+    }
+    if (foodPartner) {
+      localStorage.setItem('munchly_partner', JSON.stringify(foodPartner));
+      localStorage.setItem('foodreel_partner', JSON.stringify(foodPartner));
+    }
   },
   clearAuth: () => {
+    localStorage.removeItem('munchly_token');
+    localStorage.removeItem('munchly_role');
+    localStorage.removeItem('munchly_user');
+    localStorage.removeItem('munchly_partner');
     localStorage.removeItem('foodreel_token');
     localStorage.removeItem('foodreel_role');
     localStorage.removeItem('foodreel_user');

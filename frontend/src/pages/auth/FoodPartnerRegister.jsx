@@ -71,14 +71,14 @@ const FoodPartnerRegister = () => {
                   <polygon points="5 3 19 12 5 21 5 3" fill="currentColor" />
                 </svg>
               </span>
-              <span>FoodReel</span>
+              <span>Munchly</span>
             </Link>
             <span className="portal-badge">
               <span className="portal-badge-dot">●</span> Partner Portal
             </span>
           </div>
 
-          <h1 className="auth-title">Partner with FoodReel</h1>
+          <h1 className="auth-title">Partner with Munchly</h1>
           <p className="auth-subtitle">Showcase your culinary specials and grow your customer base</p>
         </div>
 

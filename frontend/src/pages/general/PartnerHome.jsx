@@ -85,7 +85,7 @@ const PartnerHome = () => {
   const handleReelUploaded = (newReel) => {
     if (newReel) {
       setReels((prev) => [newReel, ...prev]);
-      setActionMessage(`🎉 "${newReel.name}" uploaded and published to FoodReel feed!`);
+      setActionMessage(`🎉 "${newReel.name}" uploaded and published to Munchly feed!`);
       setTimeout(() => setActionMessage(''), 5000);
     }
   };
@@ -111,7 +111,7 @@ const PartnerHome = () => {
         <div className="dash-navbar-inner">
           <Link to="/food-partner/home" className="dash-brand">
             <span className="dash-brand-icon">▶</span>
-            <span className="dash-brand-text">FoodReel</span>
+            <span className="dash-brand-text">Munchly</span>
           </Link>
 
           <div className="dash-nav-actions">
@@ -277,7 +277,7 @@ const PartnerHome = () => {
               <div className="empty-icon-circle">🎬</div>
               <h3 className="empty-title">No food reels published yet</h3>
               <p className="empty-desc">
-                Upload 15-60s video reels of your signature dishes. Food lovers browse FoodReel to discover authentic kitchens, secret recipes, and restaurants in your area.
+                Upload 15-60s video reels of your signature dishes. Food lovers browse Munchly to discover authentic kitchens, secret recipes, and restaurants in your area.
               </p>
               <button
                 onClick={() => setShowUploadModal(true)}

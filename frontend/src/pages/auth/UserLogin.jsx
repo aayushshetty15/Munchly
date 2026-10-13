@@ -73,7 +73,7 @@ const UserLogin = () => {
                   <polygon points="5 3 19 12 5 21 5 3" fill="currentColor" />
                 </svg>
               </span>
-              <span>FoodReel</span>
+              <span>Munchly</span>
             </Link>
           </div>
           <h1 className="auth-title">Welcome back</h1>

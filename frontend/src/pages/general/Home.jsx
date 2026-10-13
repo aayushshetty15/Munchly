@@ -23,7 +23,7 @@ const DEMO_REELS = [
       contactName: 'Chef Julian Roy',
       phone: '+91 98765 43210',
       address: 'Plot 42, Bandra West, Mumbai',
-      email: 'smokehouse@foodreel.com',
+      email: 'smokehouse@munchly.com',
       cuisineType: 'BBQ & Steaks',
     },
   },
@@ -40,7 +40,7 @@ const DEMO_REELS = [
       contactName: 'Marco Rossi',
       phone: '+91 98200 11223',
       address: 'Indiranagar 100ft Road, Bengaluru',
-      email: 'bellanapoli@foodreel.com',
+      email: 'bellanapoli@munchly.com',
       cuisineType: 'Italian Pizza & Pasta',
     },
   },
@@ -57,7 +57,7 @@ const DEMO_REELS = [
       contactName: 'Vikram Mehta',
       phone: '+91 99112 33445',
       address: 'Cyber Hub, DLF Phase 2, Gurugram',
-      email: 'bitebun@foodreel.com',
+      email: 'bitebun@munchly.com',
       cuisineType: 'Burgers & Fries',
     },
   },
@@ -74,7 +74,7 @@ const DEMO_REELS = [
       contactName: 'Ananya Deshmukh',
       phone: '+91 97654 32190',
       address: 'Koregaon Park, Pune',
-      email: 'sugarbloom@foodreel.com',
+      email: 'sugarbloom@munchly.com',
       cuisineType: 'Artisan Bakery',
     },
   },
@@ -101,7 +101,7 @@ const Home = () => {
   // Load user data & saved reels from localStorage
   useEffect(() => {
     try {
-      const saved = localStorage.getItem('foodreel_saved');
+      const saved = localStorage.getItem('munchly_saved') || localStorage.getItem('foodreel_saved');
       if (saved) setSavedReelIds(JSON.parse(saved));
     } catch {
       setSavedReelIds([]);
@@ -190,6 +190,7 @@ const Home = () => {
       updated = [...savedReelIds, id];
     }
     setSavedReelIds(updated);
+    localStorage.setItem('munchly_saved', JSON.stringify(updated));
     localStorage.setItem('foodreel_saved', JSON.stringify(updated));
   };
 
@@ -232,7 +233,7 @@ const Home = () => {
               </svg>
             </span>
             <span className="text-black font-extrabold tracking-tight">
-              FoodReel
+              Munchly
             </span>
           </Link>
 

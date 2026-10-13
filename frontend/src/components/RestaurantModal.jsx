@@ -98,7 +98,7 @@ const RestaurantModal = ({ partner, onClose, onSelectDish }) => {
             </div>
             <div className="restaurant-detail-row">
               <span className="restaurant-detail-label">Partner Email</span>
-              <span className="restaurant-detail-value">{partner.email || 'partner@foodreel.com'}</span>
+              <span className="restaurant-detail-value">{partner.email || 'partner@munchly.com'}</span>
             </div>
           </div>
 
